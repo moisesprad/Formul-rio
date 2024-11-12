@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<!-- Define a codificação de caracteres como UTF-8 -->
+	<meta charset="UTF-8">
+	<!-- Define a viewport para dispositivos móveis -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Título da página que aparece na aba do navegador -->
+	<title>Validação com JavaScript</title>
+	<style>
+	body {
+		color: white;
+		/* Define a cor do texto como branco */
+		background-color: #333;
+		/* Fundo escuro para contraste */
+	}
+	
+	body {
+		background-image: url('biscoitoga.jpg');
+		/* Define uma imagem de fundo */
+		background-repeat: no-repeat;
+		/* Não repete a imagem de fundo */
+		background-size: cover;
+		/* Faz com que a imagem de fundo cubra toda a tela */
+		background-blend-mode: overlay;
+		/* Aplica um efeito de sobreposição na imagem de fundo */
+	}
+	</style>
+	<script>
+	// Função de validação do formulário
+	function valida(f) {
+		// Verifica se o campo "nome" está vazio
+		if(f.nome.value == "") {
+			alert("O campo nome não pode ficar vazio"); // Exibe um alerta
+			return false; // Impede o envio do formulário
+		}
+		return true; // Permite o envio do formulário se a validação passar
+	}
+	</script>
+</head>
+
+<body>
+	<!-- Mensagem para o usuário preencher o formulário -->
+     <marquee><b>Preencha o formulário e envie se você quiser um biscoitogatinho</b> </marquee>
+	<p>
+		<!-- Início do formulário com o método GET e a função de validação ao enviar -->
+		<form action="Form.html" method="get" onsubmit="return valida(this);">
+			<!-- Tabela para organizar os campos do formulário -->
+			<table border="1" cellpadding="4" align="center">
+				<tr>
+					<!-- Campo de entrada para o nome -->
+					<td>Nome:</td>
+					<td>
+						<input type="text" size="45" name="nome">
+					</td>
+					<!-- Campos de seleção para o sexo -->
+					<td>Sexo:</td>
+					<td>
+						<input type="radio" name="sexo" value="M" checked>Masculino
+						<input type="radio" name="sexo" value="F">Feminino
+						<input type="radio" name="sexo" value="F">Prefiro não informar </td>
+				</tr>
+				<tr>
+					<!-- Campo de entrada para a cidade -->
+					<td>Cidade:</td>
+					<td>
+						<input type="text" size="20" name="cidade">
+					</td>
+					<!-- Campo de seleção para o estado -->
+					<td>Estado:</td>
+					<td>
+						<select name="estado">
+							<option value="0">Selecione</option>
+							<option value="SP">SP</option>
+							<option value="RJ">RJ</option>
+						</select>
+					</td>
+				</tr>
+				<tr align="center">
+					<!-- Campos de seleção múltipla para objetos de interesse -->
+					<td colspan="4"> <b>Quais biscoitos você gostaria?</b>
+						<br>
+						<input type="checkbox" name="cat-morango" value="mo">cat-morango &nbsp;
+						<input type="checkbox" name="cat-chocolate" value="cho">cat-chocolate &nbsp;
+						<input type="checkbox" name="cat-banana" value="ba">cat-banana &nbsp;
+						<input type="checkbox" name="cat-extramorango" value="ext">cat-extramorango </td>
+				</tr>
+                <tr align="center">
+                    <td colspan="4"> <b>Quais acompanhamentos?</b>
+						<br>
+						<input type="checkbox" name="catmilk-morango" value="milkmo">catmilk-morango &nbsp;
+						<input type="checkbox" name="catmilk-chocolate" value="milkcho">catmilk-chocolate &nbsp;
+						<input type="checkbox" name="catmilk-banana" value="milkba">catmilk-banana &nbsp;
+						<input type="checkbox" name="catmilk-ExtraExtramorango" value="milkext">catmilk-ExtraExtramorango </td>
+
+
+                </tr>
+				<tr>
+					<!-- Campo de texto para mensagem adicional -->
+					<td>Diga por que você merece um biscoito gatinho:</td>
+					<td colspan="3"><img src="cooki.jpg" width="80" height="80" alt="4">
+						<textarea name="mensagem" rows="4" cols="35"></textarea> <img src="cooki.jpg" width="80" height="80" alt="4"> </td>
+				</tr>
+				<tr>
+					<!-- Botões de envio e limpeza do formulário -->
+					<td colspan="4" align="center">
+						<input type="submit" value="Enviar">
+						<input type="reset" value="Limpar"> </td>
+				</tr>
+			</table>
+		</form>
+</body>
